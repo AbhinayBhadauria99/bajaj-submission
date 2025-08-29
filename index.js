@@ -3,6 +3,10 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 app.use(express.json());
 
+app.get('/', (req, res) => {
+    res.status(200).send({ message: "API is running successfully. Please use the /bfhl endpoint with a POST request." });
+});
+
 
 app.post('/bfhl', (req, res) => {
     try {
